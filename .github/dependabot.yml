@@ -17,5 +17,5 @@ updates:
       # Minor/patch bumps share one PR and auto-merge after CI passes.
       # Major bumps arrive as separate PRs for manual review.
       dependencies:
-        patterns: ['*']
+        patterns: ["*"]
         update-types: [minor, patch]
