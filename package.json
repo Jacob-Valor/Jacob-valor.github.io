@@ -1,0 +1,28 @@
+{
+  "name": "rspress-doc-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "scripts": {
+    "build": "rspress build",
+    "check": "biome check --write",
+    "ci:check": "biome ci",
+    "dev": "rspress dev",
+    "format": "biome format --write",
+    "preview": "rspress preview",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@rspress/core": "^2.0.23"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.11",
+    "@types/bun": "^1.4.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        update-types: [minor, patch]
+
+  - package-ecosystem: bun
+    directory: /
+    schedule:
+      interval: weekly
+    versioning-strategy: increase
+    groups:
+      # Minor/patch bumps share one PR and auto-merge after CI passes.
+      # Major bumps arrive as separate PRs for manual review.
+      dependencies:
+        patterns: ['*']
+        update-types: [minor, patch]
