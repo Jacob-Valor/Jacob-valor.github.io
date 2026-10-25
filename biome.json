@@ -3,6 +3,11 @@
   "files": {
     "includes": ["**", "!**/skills-lock.json"]
   },
+  "markdown": {
+    "formatter": {
+      "enabled": false
+    }
+  },
   "assist": {
     "actions": {
       "source": {
