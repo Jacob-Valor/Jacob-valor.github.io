@@ -61,3 +61,33 @@ html.dark {
     ),
     #121212;
 }
+
+/* Avatar as the nav logo: large enough to read the pixels, rounded like the About photo. */
+.rp-nav__title__link .rp-nav__title__logo-image.rp-nav__title__logo-image {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+/* Homepage feature cards: two per row on desktop, one per row on phones, so no card sits alone. */
+.rp-home-feature .rp-home-feature__item {
+  width: calc(50% - var(--rp-home-feature-gap) / 2);
+}
+
+@media (max-width: 640px) {
+  .rp-home-feature .rp-home-feature__item {
+    width: 100%;
+  }
+}
+
+/* Top-bar social icons: one size and one visual weight, whether built in or custom. */
+.rp-social-links .rp-social-links__icon,
+.rp-social-links .rp-social-links__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rp-social-links .rp-social-links__icon svg {
+  display: block;
+  fill: currentColor;
+}
