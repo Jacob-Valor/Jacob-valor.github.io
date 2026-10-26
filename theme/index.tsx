@@ -5,9 +5,13 @@ import {
   type LayoutProps,
   Layout as ThemeLayout,
 } from '@rspress/core/theme-original';
+import { AboutMenu } from './AboutMenu';
 import { ProductMenu } from './ProductMenu';
+import { SearchEnhancer } from './SearchEnhancer';
 
 export * from '@rspress/core/theme-original';
+// Replaces Rspress's one-line home footer.
+export { HomeFooter } from './HomeFooter';
 
 // Adds the product menu after the logo.
 export function Layout(props: LayoutProps) {
@@ -18,6 +22,8 @@ export function Layout(props: LayoutProps) {
         <>
           {props.afterNavTitle}
           <ProductMenu />
+          <SearchEnhancer />
+          <AboutMenu />
         </>
       }
     />
