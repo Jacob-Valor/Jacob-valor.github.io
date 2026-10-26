@@ -49,7 +49,10 @@ html.dark .site-footer {
 }
 
 .site-footer__social {
+  /* 24px tap target around the 18px icon, without moving it. */
   display: inline-flex;
+  margin: -3px;
+  padding: 3px;
   color: var(--rp-c-brand);
   transition: transform 0.2s ease;
 }
@@ -86,13 +89,16 @@ html.dark .site-footer {
 .site-footer__cols ul {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 3px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .site-footer__cols a {
+  /* 24px tall tap target; the list gap shrinks so the spacing looks the same. */
+  display: inline-block;
+  padding: 3px 0;
   font-size: 15px;
   color: var(--rp-c-text-2);
   text-decoration: none;
