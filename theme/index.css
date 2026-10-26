@@ -61,3 +61,392 @@ html.dark {
     ),
     #121212;
 }
+
+/* Avatar as the nav logo: large enough to read the pixels, rounded like the About photo. */
+.rp-nav__title__link .rp-nav__title__logo-image.rp-nav__title__logo-image {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+/* Homepage feature cards: two per row on desktop, one per row on phones, so no card sits alone. */
+.rp-home-feature .rp-home-feature__item {
+  width: calc(50% - var(--rp-home-feature-gap) / 2);
+}
+
+@media (max-width: 640px) {
+  .rp-home-feature .rp-home-feature__item {
+    width: 100%;
+  }
+}
+
+/* Top-bar social icons: one size and one visual weight, whether built in or custom. */
+.rp-social-links .rp-social-links__icon,
+.rp-social-links .rp-social-links__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rp-social-links .rp-social-links__icon svg {
+  display: block;
+  fill: currentColor;
+}
+
+/* Search dialog (Rspress built-in, restyled): flat tone steps, no blur, one accent for marks. */
+/* Backdrop: the site ink tinted over the page, faded in with the dialog. No blur. */
+.rp-search-panel__mask {
+  background: rgba(11, 16, 19, 0.6);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  animation: rp-search-mask-in 0.2s ease-out;
+}
+
+@keyframes rp-search-mask-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-search-panel__mask {
+    animation: none;
+  }
+}
+
+/* Dialog: one floating surface with a 14px inset. The input and footer are wells (a tone step), rows are flat. */
+.rp-search-panel__modal.rp-search-panel__modal {
+  width: min(640px, calc(100vw - 32px));
+  max-width: 640px;
+  margin-top: 9vh;
+  padding: 14px 14px 0;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+.rp-search-panel__input-form.rp-search-panel__input-form {
+  height: 54px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.rp-search-panel__input-form:focus-within {
+  box-shadow: 0 0 0 2px var(--rp-c-brand);
+}
+
+.rp-search-panel__input-form .rp-search-panel__input {
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.rp-search-panel__input::placeholder {
+  color: var(--rp-c-text-2);
+}
+
+.rp-search-panel__results {
+  max-height: min(60vh, calc(100vh - 220px));
+  margin-top: 0;
+  padding-right: 0;
+}
+
+.rp-search-panel__tabs {
+  background-color: var(--rp-c-bg-soft);
+}
+
+/* Result rows: 60px minimum touch height, a 2px rhythm between rows, rounded active well. */
+.rp-search-panel__modal .rp-suggest-item {
+  margin: 2px 0;
+}
+
+.rp-search-panel__modal .rp-suggest-item__link,
+.rp-search-panel__modal .rp-suggest-item__link * {
+  text-decoration: none;
+}
+
+.rp-search-panel__modal .rp-suggest-item .rp-suggest-item__link {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 12px;
+  padding-left: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.rp-search-panel__modal .rp-suggest-item__container {
+  min-height: 60px;
+  padding-right: 12px;
+}
+
+.rp-search-panel__modal .rp-suggest-item__content {
+  padding: 10px 12px;
+  line-height: 1.45;
+}
+
+/* Title first (15px, 600), a two-line excerpt under it at 13px. */
+.rp-search-panel__modal .rp-suggest-item__content > span {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.rp-search-panel__modal .rp-suggest-item__title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.rp-search-panel__modal .rp-suggest-item__statement {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--rp-c-text-2);
+}
+
+.rp-search-panel__modal .rp-suggest-item__icon {
+  color: var(--rp-c-text-2);
+}
+
+/* Match highlight: the only text accent in the rows, with the brand tint behind it. */
+.rp-search-panel__modal .rp-suggest-item__mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Section tag: quiet, a brand tint behind small brand text. */
+.rp-search-panel__modal .rp-suggest-item .search-tag {
+  flex: none;
+  align-self: center;
+  margin: 0 10px 0 auto;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Count label above the results: 12px, 600, secondary text, aligned with the row icons. */
+.rp-search-panel__modal p.search-count {
+  margin: 12px 8px 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--rp-c-text-2);
+}
+
+/* Footer: a band in the well tone, flush with the dialog edges, hints at 12px. */
+.rp-search-panel__modal::after {
+  content: "↑↓ navigate  ·  ↵ open  ·  esc close";
+  display: block;
+  margin: 12px -14px 0;
+  padding: 12px 20px;
+  border-radius: 0 0 16px 16px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--rp-c-text-2);
+}
+
+/* Dark search dialog: the site ink family. Dialog #12171b, wells #0b1013, active row #1d262c. */
+html.dark .rp-search-panel__modal.rp-search-panel__modal {
+  background: #12171b;
+}
+
+html.dark .rp-search-panel__input-form.rp-search-panel__input-form {
+  background: #0b1013;
+}
+
+html.dark .rp-search-panel__tabs,
+html.dark .rp-search-panel__modal .rp-search-panel__results {
+  background-color: #12171b;
+}
+
+html.dark .rp-search-panel__modal::after {
+  background: #0b1013;
+}
+
+html.dark .rp-search-panel__modal .rp-suggest-item__title {
+  color: var(--rp-c-text-1);
+}
+
+html.dark .rp-search-panel__modal .rp-suggest-item__mark {
+  color: #ffe3d1;
+  background: rgba(255, 94, 0, 0.26);
+}
+
+html.dark .rp-search-panel__modal .rp-suggest-item .search-tag {
+  color: #ff7524;
+  background: rgba(255, 94, 0, 0.12);
+}
+
+/* Light search dialog: white surface, bg-soft wells, darkened brand text for contrast. */
+html:not(.dark) .rp-search-panel__mask {
+  background: rgba(28, 30, 34, 0.35);
+}
+
+html:not(.dark) .rp-search-panel__modal.rp-search-panel__modal {
+  background: var(--rp-c-bg);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.18);
+}
+
+html:not(.dark) .rp-search-panel__input-form.rp-search-panel__input-form {
+  background: var(--rp-c-bg-soft);
+}
+
+html:not(.dark) .rp-search-panel__tabs,
+html:not(.dark) .rp-search-panel__modal .rp-search-panel__results {
+  background-color: var(--rp-c-bg);
+}
+
+html:not(.dark) .rp-search-panel__modal::after {
+  background: var(--rp-c-bg-soft);
+}
+
+html:not(.dark) .rp-search-panel__modal .rp-suggest-item__title {
+  color: var(--rp-c-text-1);
+}
+
+html:not(.dark) .rp-search-panel__modal .rp-suggest-item__mark {
+  color: #9a3412;
+  background: rgba(255, 94, 0, 0.16);
+}
+
+html:not(.dark) .rp-search-panel__modal .rp-suggest-item .search-tag {
+  color: #9a3412;
+  background: rgba(255, 94, 0, 0.1);
+}
+
+html.dark
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__link {
+  background-color: #1d262c;
+}
+
+html.dark
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__content
+  .rp-suggest-item__title,
+html.dark
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__icon,
+html.dark
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__action-icon {
+  color: var(--rp-c-text-1);
+}
+
+html.dark
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__content
+  .rp-suggest-item__statement {
+  color: var(--rp-c-text-2);
+}
+
+html.dark
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__content
+  .rp-suggest-item__mark {
+  color: #ffe3d1;
+  background: rgba(255, 94, 0, 0.32);
+  text-decoration: none;
+}
+
+html:not(.dark)
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__link {
+  background-color: var(--rp-c-bg-soft);
+}
+
+html:not(.dark)
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__content
+  .rp-suggest-item__title,
+html:not(.dark)
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__icon,
+html:not(.dark)
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__action-icon {
+  color: var(--rp-c-text-1);
+}
+
+html:not(.dark)
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__content
+  .rp-suggest-item__statement {
+  color: var(--rp-c-text-2);
+}
+
+html:not(.dark)
+  .rp-search-panel__modal
+  .rp-suggest-item--current
+  .rp-suggest-item__container
+  .rp-suggest-item__content
+  .rp-suggest-item__mark {
+  color: #9a3412;
+  background: rgba(255, 94, 0, 0.18);
+  text-decoration: none;
+}
+
+/* Search motion: results rise in with a short stagger; the active row and focus ring ease.
+   Opacity and transform only. Reduced motion turns all of it off. */
+@keyframes rp-search-result-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.rp-search-panel__modal .rp-suggest-item {
+  animation: rp-search-result-in 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rp-search-panel__modal .rp-suggest-item:nth-child(2) {
+  animation-delay: 30ms;
+}
+.rp-search-panel__modal .rp-suggest-item:nth-child(3) {
+  animation-delay: 60ms;
+}
+.rp-search-panel__modal .rp-suggest-item:nth-child(4) {
+  animation-delay: 90ms;
+}
+.rp-search-panel__modal .rp-suggest-item:nth-child(n + 5) {
+  animation-delay: 120ms;
+}
+
+.rp-search-panel__input-form {
+  transition: box-shadow 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-search-panel__modal .rp-suggest-item,
+  .rp-search-panel__modal .rp-suggest-item__link,
+  .rp-search-panel__input-form {
+    animation: none;
+    transition: none;
+  }
+}

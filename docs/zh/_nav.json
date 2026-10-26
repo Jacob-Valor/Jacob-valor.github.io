@@ -1,16 +1,32 @@
 [
   {
-    "text": "指南",
-    "link": "/guide/start/introduction",
-    "activeMatch": "/guide/"
+    "text": "写作",
+    "link": "/writeups/",
+    "activeMatch": "/writeups/"
   },
   {
-    "text": "API",
-    "link": "/api/",
-    "activeMatch": "/api/"
+    "text": "CTF",
+    "link": "/ctf/",
+    "activeMatch": "/ctf/"
   },
   {
-    "text": "文档",
-    "link": "https://rspress.rs/"
+    "text": "研究",
+    "link": "/research/",
+    "activeMatch": "/research/"
+  },
+  {
+    "text": "项目",
+    "link": "/projects/",
+    "activeMatch": "/projects/"
+  },
+  {
+    "text": "博客",
+    "link": "/blog/",
+    "activeMatch": "/blog/"
+  },
+  {
+    "text": "关于",
+    "link": "/about/",
+    "activeMatch": "/about/"
   }
 ]

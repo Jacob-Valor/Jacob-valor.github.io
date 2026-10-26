@@ -1,16 +1,32 @@
 [
   {
-    "text": "Guide",
-    "link": "/guide/start/introduction",
-    "activeMatch": "/guide/"
+    "text": "Writeups",
+    "link": "/writeups/",
+    "activeMatch": "/writeups/"
   },
   {
-    "text": "API",
-    "link": "/api/",
-    "activeMatch": "/api/"
+    "text": "CTF",
+    "link": "/ctf/",
+    "activeMatch": "/ctf/"
   },
   {
-    "text": "Document",
-    "link": "https://rspress.rs/"
+    "text": "Research",
+    "link": "/research/",
+    "activeMatch": "/research/"
+  },
+  {
+    "text": "Projects",
+    "link": "/projects/",
+    "activeMatch": "/projects/"
+  },
+  {
+    "text": "Blog",
+    "link": "/blog/",
+    "activeMatch": "/blog/"
+  },
+  {
+    "text": "About",
+    "link": "/about/",
+    "activeMatch": "/about/"
   }
 ]
