@@ -210,13 +210,21 @@
   font-size: 12px;
 }
 
-@media (max-width: 768px) {
+/* Narrower than the 800px panel: pin it inside the screen, 12px from each side. */
+@media (max-width: 920px) {
   .pm__panel {
     position: fixed;
     top: 60px;
     left: 12px;
     right: 12px;
     width: auto;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .pm__panel {
     grid-template-columns: 1fr;
     max-height: calc(100vh - 80px);
     overflow-y: auto;

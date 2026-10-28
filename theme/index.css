@@ -70,6 +70,19 @@ html.dark {
 }
 
 /* Homepage feature cards: two per row on desktop, one per row on phones, so no card sits alone. */
+/* Same side margins as the header: 20px, 16px on phones. */
+.rp-home-feature.rp-home-feature {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 640px) {
+  .rp-home-feature.rp-home-feature {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 .rp-home-feature .rp-home-feature__item {
   width: calc(50% - var(--rp-home-feature-gap) / 2);
 }
