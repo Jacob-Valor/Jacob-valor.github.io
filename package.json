@@ -14,10 +14,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@rspress/core": "^2.0.23"
+    "@rspress/core": "^2.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.4",
+    "@biomejs/biome": "2.6.5",
     "@types/bun": "^1.4.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
